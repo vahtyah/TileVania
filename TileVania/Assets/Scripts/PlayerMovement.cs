@@ -55,11 +55,11 @@ public class PlayerMovement : MonoBehaviour
         if (!cl.IsTouchingLayers(LayerMask.GetMask("Lader")))
         {
             rb.gravityScale = gravityScaleAtStart;
+            animator.SetBool("isClimbing", false);
             return;
         }
 
         rb.gravityScale = 0f;
-
         Vector2 playerVelocity = new Vector2(rb.velocity.x, moveInput.y * climbSpeed);
         rb.velocity = playerVelocity;
 
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue input)
     {
-        if (!cl.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
+        if (!cl.IsTouchingLayers(LayerMask.GetMask("Ground")) && !cl.IsTouchingLayers(LayerMask.GetMask("Lader"))) return;
         if (input.isPressed)
         {
             rb.velocity += new Vector2(0f, jumpSpeed);
