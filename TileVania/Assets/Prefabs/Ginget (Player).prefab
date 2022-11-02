@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6701220496731204026}
   - component: {fileID: -2094991322697926839}
   - component: {fileID: 5826464712382091949}
-  m_Layer: 0
+  - component: {fileID: 919933070106639773}
+  m_Layer: 9
   m_Name: Ginget (Player)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -285364601
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1607333974, guid: 33aeb0d52c5be0946b2188323c77b444, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,11 +125,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 6
+  m_Material: {fileID: 6200000, guid: ac35f66b3ef02db4fb18cbc6e7a04ebd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &6701220496731204026
 CapsuleCollider2D:
@@ -143,8 +144,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031926632, y: -0.057468295}
-  m_Size: {x: 0.44234467, y: 0.8850634}
+  m_Offset: {x: -0.030003548, y: -0.04244697}
+  m_Size: {x: 0.5111561, y: 0.85502076}
   m_Direction: 0
 --- !u!114 &-2094991322697926839
 MonoBehaviour:
@@ -188,5 +189,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823f73113b03f22438928029315edde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
-  jumpSpeed: 3
+  runSpeed: 7
+  jumpSpeed: 20
+  climbSpeed: 5
+--- !u!61 &919933070106639773
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818944632999859589}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.038025856, y: -0.47}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.41033363, y: 0.06270784}
+  m_EdgeRadius: 0
