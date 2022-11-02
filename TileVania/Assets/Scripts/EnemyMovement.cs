@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveSpeed, 0f);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), 1f);
         moveSpeed = -moveSpeed;

@@ -17,7 +17,7 @@ TagManager:
   - Player
   - Bouncing
   - Enemy
-  - 
+  - Hazards
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: Boun
     uniqueID: 614440263
+    locked: 0
+  - name: Hazards
+    uniqueID: 2751964949
     locked: 0
   - name: Enemy
     uniqueID: 1240552239
