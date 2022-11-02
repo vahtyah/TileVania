@@ -15,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Collider2D cl;
+    float gravityScaleAtStart;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         cl = GetComponent<Collider2D>();
+        gravityScaleAtStart = rb.gravityScale;
     }
 
     private void Update()
@@ -50,9 +52,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void ClimbLadder()
     {
-        if (!cl.IsTouchingLayers(LayerMask.GetMask("Lader"))) return;
+        if (!cl.IsTouchingLayers(LayerMask.GetMask("Lader")))
+        {
+            rb.gravityScale = gravityScaleAtStart;
+            return;
+        }
+
+        rb.gravityScale = 0f;
+
         Vector2 playerVelocity = new Vector2(rb.velocity.x, moveInput.y * climbSpeed);
         rb.velocity = playerVelocity;
+
         bool playerHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
         animator.SetBool("isClimbing", playerHasVerticalSpeed);
     }
