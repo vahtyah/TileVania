@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2931771684383730197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276717558605912045}
+  m_Layer: 9
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1276717558605912045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931771684383730197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.187, y: -0.183, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3818944632999859594}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3818944632999859589
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,8 +45,8 @@ GameObject:
   - component: {fileID: 418995420849345504}
   - component: {fileID: 6701220496731204026}
   - component: {fileID: -2094991322697926839}
-  - component: {fileID: 5826464712382091949}
   - component: {fileID: 919933070106639773}
+  - component: {fileID: 5826464712382091949}
   m_Layer: 9
   m_Name: Ginget (Player)
   m_TagString: Untagged
@@ -34,7 +65,8 @@ Transform:
   m_LocalPosition: {x: -7.197, y: -2.492, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1276717558605912045}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +129,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -285364601
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1607333974, guid: 33aeb0d52c5be0946b2188323c77b444, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -177,22 +209,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5826464712382091949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3818944632999859589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 823f73113b03f22438928029315edde1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 7
-  jumpSpeed: 20
-  climbSpeed: 5
-  deathKick: {x: -10, y: 10}
 --- !u!61 &919933070106639773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,3 +235,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44181442, y: 0.06270784}
   m_EdgeRadius: 0
+--- !u!114 &5826464712382091949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818944632999859589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823f73113b03f22438928029315edde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 7
+  jumpSpeed: 20
+  climbSpeed: 5
+  deathKick: {x: -10, y: 10}
+  pointGun: {fileID: 1276717558605912045}
+  bullet: {fileID: 9046927068588563414, guid: 8b2a6523cea222747a3f3f9e45cb852b, type: 3}
