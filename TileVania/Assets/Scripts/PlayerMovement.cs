@@ -101,7 +101,8 @@ public class PlayerMovement : MonoBehaviour
     
     void OnFire(InputValue inputValue)
     {
+        if (!isAlive) return;
         if (inputValue.isPressed)
-            Instantiate(bullet, pointGun.position, Quaternion.identity);
+            Instantiate(bullet, pointGun.position, bullet.transform.rotation);
     }
 }
