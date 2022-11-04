@@ -21,7 +21,7 @@ TagManager:
   - Hazards
   - Bullet
   - Interactables
-  - 
+  - Coin
   - 
   - 
   - 
@@ -68,4 +68,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4009602695
+    locked: 0
+  - name: Coin
+    uniqueID: 1900146311
     locked: 0
