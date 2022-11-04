@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,27 @@ public class GameSession : MonoBehaviour
     public static GameSession instance;
 
     [SerializeField] int playerLives = 3;
+    [SerializeField] TextMeshProUGUI livesText;
+    [SerializeField] TextMeshProUGUI scoreText;
 
-    void Start()
+    int score = 0;
+
+    void Awake()
     {
-        if(instance) Destroy(gameObject);
+        if (instance) Destroy(gameObject);
         else instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+    private void Start()
+    {
+        livesText.text = "Live: " + playerLives.ToString();
+        scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void IncementScore()
+    {
+        score++;
+        scoreText.text = "Score: " + score.ToString();
     }
 
     public void ProcessPlayerDeat()
@@ -24,8 +40,9 @@ public class GameSession : MonoBehaviour
     }
 
     private void TakeLife()
-    { 
+    {
         playerLives--;
+        livesText.text = "Live: " + playerLives.ToString();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -34,5 +51,6 @@ public class GameSession : MonoBehaviour
         SceneManager.LoadScene(0);
         print("Tuan");
         Destroy(gameObject);
+        ScenePersist.instance.ResetScenePersist();
     }
 }
