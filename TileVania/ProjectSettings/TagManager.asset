@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Bouncing
   - Enemy
   - Hazards
-  - 
-  - 
+  - Bullet
+  - Interactables
   - 
   - 
   - 
@@ -61,6 +62,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1240552239
+    locked: 0
+  - name: Interactables
+    uniqueID: 4241778721
     locked: 0
   - name: Player
     uniqueID: 4009602695

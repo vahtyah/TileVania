@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         isAlive = false;
         animator.SetTrigger("Dying");
         rb.velocity = deathKick;
+        GameSession.instance.ProcessPlayerDeat();
     }
 
     private void FlipSprite()
@@ -105,4 +106,5 @@ public class PlayerMovement : MonoBehaviour
         if (inputValue.isPressed)
             Instantiate(bullet, pointGun.position, bullet.transform.rotation);
     }
+
 }
