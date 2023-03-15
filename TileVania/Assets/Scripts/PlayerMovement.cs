@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D feetCollider;
     float gravityScaleAtStart;
     bool isAlive = true;
+    float currentTimeToNextShoot;
+    float maxTimeToNextShoot = .4f;
 
     private void Start()
     {
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = rb.gravityScale;
+        currentTimeToNextShoot = maxTimeToNextShoot;
     }
 
     private void Update()
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
             Run();
             FlipSprite();
             ClimbLadder();
+            currentTimeToNextShoot -= Time.deltaTime;
         }
         Die();
     }
@@ -99,12 +103,24 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += new Vector2(0f, jumpSpeed);
         }
     }
-    
+
     void OnFire(InputValue inputValue)
     {
         if (!isAlive) return;
-        if (inputValue.isPressed)
-            Instantiate(bullet, pointGun.position, bullet.transform.rotation);
+        if (inputValue.isPressed && currentTimeToNextShoot <= 0)
+        {
+            animator.SetTrigger("Shooting");
+            StartCoroutine(SpawnBullet());
+            currentTimeToNextShoot = maxTimeToNextShoot;
+            return;
+        }
+
+    }
+
+    IEnumerator SpawnBullet()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(bullet, pointGun.position, bullet.transform.rotation);
     }
 
 }

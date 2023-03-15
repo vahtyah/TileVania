@@ -749,7 +749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.975, y: 20.165998, z: -10}
+  m_LocalPosition: {x: -6.33362, y: -0.76190186, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1802,6 +1802,8 @@ MonoBehaviour:
   - m_Hash: 256545655
     m_ParentHash: 756556552
   - m_Hash: -725336713
+    m_ParentHash: 756556552
+  - m_Hash: -1482263730
     m_ParentHash: 756556552
 --- !u!1 &969308164
 GameObject:
@@ -26336,7 +26338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547405665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.4709, y: 15.608686, z: -0.029644966}
+  m_LocalPosition: {x: -2.377099, y: -6.5693135, z: -0.029644966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26602,7 +26604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700756913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.4709, y: 15.608686, z: -0.029644966}
+  m_LocalPosition: {x: -2.377099, y: -6.5693135, z: -0.029644966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27024,7 +27026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010119854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.4709, y: 15.608686, z: -0.029644966}
+  m_LocalPosition: {x: -2.377099, y: -6.5693135, z: -0.029644966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27237,6 +27239,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1276717558605912045, guid: 81c0eacd2a9e4a549a2fdb59ebaaf490, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.216
+      objectReference: {fileID: 0}
     - target: {fileID: 3818944632999859589, guid: 81c0eacd2a9e4a549a2fdb59ebaaf490, type: 3}
       propertyPath: m_Name
       value: Ginget (Player)
@@ -27247,11 +27253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3818944632999859594, guid: 81c0eacd2a9e4a549a2fdb59ebaaf490, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.518
+      value: -8.33
       objectReference: {fileID: 0}
     - target: {fileID: 3818944632999859594, guid: 81c0eacd2a9e4a549a2fdb59ebaaf490, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.708
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 3818944632999859594, guid: 81c0eacd2a9e4a549a2fdb59ebaaf490, type: 3}
       propertyPath: m_LocalPosition.z
