@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     float currentTimeToNextShoot;
     float maxTimeToNextShoot = .4f;
 
+    public bool isPause = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,7 +38,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isAlive)
+        if (isPause) { Time.timeScale = 0; }
+        else Time.timeScale = 1;
+        if (isAlive && !isPause)
         {
             Run();
             FlipSprite();
@@ -97,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue input)
     {
-        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || !isAlive) return;
+        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || !isAlive || isPause) return;
         if (input.isPressed)
         {
             rb.velocity += new Vector2(0f, jumpSpeed);
@@ -106,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnFire(InputValue inputValue)
     {
-        if (!isAlive) return;
+        if (!isAlive || isPause) return;
         if (inputValue.isPressed && currentTimeToNextShoot <= 0)
         {
             animator.SetTrigger("Shooting");

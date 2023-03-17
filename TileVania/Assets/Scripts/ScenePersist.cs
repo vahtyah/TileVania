@@ -11,6 +11,7 @@ public class ScenePersist : MonoBehaviour
         else instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
     public void ResetScenePersist()
     {
         Destroy(gameObject);

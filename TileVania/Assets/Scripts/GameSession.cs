@@ -12,6 +12,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] int playerLives = 3;
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] PlayerMovement player;
 
     int score = 0;
 
@@ -21,6 +22,7 @@ public class GameSession : MonoBehaviour
         else instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
     private void Start()
     {
         livesText.text = "Live: " + playerLives.ToString();
@@ -49,8 +51,29 @@ public class GameSession : MonoBehaviour
     private void ResetGameSession()
     {
         SceneManager.LoadScene(0);
-        print("Tuan");
         Destroy(gameObject);
         ScenePersist.instance.ResetScenePersist();
     }
+
+    public void OnPauseButtonClick()
+    {
+        if (player != null)
+        {
+            player.isPause = true;
+        }
+    }
+
+    public void OnResumeButtonClick()
+    {
+        if (player != null)
+        {
+            player.isPause = false;
+        }
+    }
+
+    public void OnBackButtonClick()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 }

@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerMovement>();
         speedBullet *= player.transform.localScale.x;
-        print(Mathf.Sign(player.transform.localScale.x));
     }
     private void Update()
     {

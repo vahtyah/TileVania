@@ -7,12 +7,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
 
     Rigidbody2D rb;
-    BoxCollider2D boxCollider;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
