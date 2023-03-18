@@ -18,6 +18,7 @@ public class GameSession : MonoBehaviour
 
     void Awake()
     {
+        print(instance);
         if (instance) Destroy(gameObject);
         else instance = this;
         DontDestroyOnLoad(gameObject);
@@ -73,7 +74,7 @@ public class GameSession : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        SceneManager.LoadScene("Menu");
+        ResetGameSession();
     }
 
 }
