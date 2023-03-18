@@ -18,7 +18,6 @@ public class GameSession : MonoBehaviour
 
     void Awake()
     {
-        print(instance);
         if (instance) Destroy(gameObject);
         else instance = this;
         DontDestroyOnLoad(gameObject);

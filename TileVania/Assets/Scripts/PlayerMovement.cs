@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 deathKick;
     [SerializeField] Transform pointGun;
     [SerializeField] GameObject bullet;
+    [SerializeField] AudioClip coinPickupSFX;
 
     Vector2 moveInput;
     Rigidbody2D rb;
@@ -127,4 +128,13 @@ public class PlayerMovement : MonoBehaviour
         Instantiate(bullet, pointGun.position, bullet.transform.rotation);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            GameSession.instance.IncementScore();
+            AudioSource.PlayClipAtPoint(coinPickupSFX, Camera.main.transform.position);
+            Destroy(collision.gameObject);
+        }
+    }
 }
