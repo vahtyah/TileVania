@@ -8,6 +8,9 @@ public class MenuManager : MonoBehaviour
 {
     public void QuitButtonClick()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
         Application.Quit();
     }
 
