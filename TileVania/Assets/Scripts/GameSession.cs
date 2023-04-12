@@ -12,6 +12,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] int playerLives = 3;
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI arrowText;
     [SerializeField] PlayerMovement player;
 
     int score = 0;
@@ -27,6 +28,12 @@ public class GameSession : MonoBehaviour
     {
         livesText.text = "Live: " + playerLives.ToString();
         scoreText.text = "Score: " + score.ToString();
+        ChangeArrow();
+    }
+
+    public void ChangeArrow()
+    {
+        arrowText.text = "Arrow: " + PlayerMovement.arrow.ToString();
     }
 
     public void IncementScore()
@@ -74,6 +81,25 @@ public class GameSession : MonoBehaviour
     public void OnBackButtonClick()
     {
         ResetGameSession();
+    }
+
+    public void BuyHealthButtonClick()
+    {
+        if (score < 10) return;
+        score -= 10;
+        scoreText.text = "Score: " + score.ToString();
+        playerLives++;
+        livesText.text = "Live: " + playerLives.ToString();
+
+    }
+
+    public void BuyArrowButtonClick()
+    {
+        if(score < 5) return;
+        score -= 5;
+        scoreText.text = "Score: " + score.ToString();
+        PlayerMovement.arrow++;
+        ChangeArrow();
     }
 
 }

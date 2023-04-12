@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     bool isAlive = true;
     float currentTimeToNextShoot;
     float maxTimeToNextShoot = .4f;
+
+    public static int arrow = 5;
 
     public bool isPause = false;
 
@@ -112,14 +115,17 @@ public class PlayerMovement : MonoBehaviour
     void OnFire(InputValue inputValue)
     {
         if (!isAlive || isPause) return;
-        if (inputValue.isPressed && currentTimeToNextShoot <= 0)
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        if (inputValue.isPressed && currentTimeToNextShoot <= 0 && arrow > 0)
         {
             animator.SetTrigger("Shooting");
             StartCoroutine(SpawnBullet());
             currentTimeToNextShoot = maxTimeToNextShoot;
+            arrow--;
+            GameSession.instance.ChangeArrow();
             return;
         }
-
     }
 
     IEnumerator SpawnBullet()
