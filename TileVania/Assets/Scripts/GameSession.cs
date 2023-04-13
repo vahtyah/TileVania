@@ -85,8 +85,8 @@ public class GameSession : MonoBehaviour
 
     public void BuyHealthButtonClick()
     {
-        if (score < 10) return;
-        score -= 10;
+        if (score < 3) return;
+        score -= 3;
         scoreText.text = "Score: " + score.ToString();
         playerLives++;
         livesText.text = "Live: " + playerLives.ToString();
@@ -95,8 +95,8 @@ public class GameSession : MonoBehaviour
 
     public void BuyArrowButtonClick()
     {
-        if(score < 5) return;
-        score -= 5;
+        if(score < 1) return;
+        score -= 1;
         scoreText.text = "Score: " + score.ToString();
         PlayerMovement.arrow++;
         ChangeArrow();
