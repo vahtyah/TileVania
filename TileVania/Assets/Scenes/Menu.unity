@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.001159668, y: 0.00036621094}
+  m_AnchoredPosition: {x: -0.0012207031, y: 0.00036621094}
   m_SizeDelta: {x: -1103.5, y: -439.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51267676
@@ -646,10 +646,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 753007916}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_volume
-        m_Mode: 0
+      - m_Target: {fileID: 1203310636}
+        m_TargetAssemblyTypeName: UIOptions, Assembly-CSharp
+        m_MethodName: VolumeUpdater
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -956,11 +956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583395506}
   m_CullTransparentMesh: 1
---- !u!82 &753007916 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5749021436268082231, guid: 5a2cd6b4b368bc1429fb67b84f0f2d78, type: 3}
-  m_PrefabInstance: {fileID: 1984877870}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1004975971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1514,7 @@ GameObject:
   - component: {fileID: 1203310633}
   - component: {fileID: 1203310635}
   - component: {fileID: 1203310634}
+  - component: {fileID: 1203310636}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1546,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.001159668, y: 0.0026855469}
+  m_AnchoredPosition: {x: -0.0012207031, y: 0.0026855469}
   m_SizeDelta: {x: -1103.5, y: -439.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1203310634
@@ -1587,6 +1583,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203310632}
   m_CullTransparentMesh: 1
+--- !u!114 &1203310636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203310632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9897649ccd733e4a8a9e86079c7cc91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 380082538}
 --- !u!1 &1290426411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,6 +2968,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061550988415067442, guid: 5a2cd6b4b368bc1429fb67b84f0f2d78, type: 3}
       propertyPath: m_Name
+      value: BackgroundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061550988415067442, guid: 5a2cd6b4b368bc1429fb67b84f0f2d78, type: 3}
+      propertyPath: m_TagString
       value: BackgroundMusic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
